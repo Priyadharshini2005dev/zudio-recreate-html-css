@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="zudio3.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html"class="logo">zudio</a>
+        <a href="" id="gap1">E-Gift Card</a>
+        <a href="">Reload</a>
+        <a href="">Check Balance</a>
+        <a href="">Find a Store</a>
+        <a href="">T & C</a>
+        <a href="">Order Status and Resend</a>
+    </div>
+    <div class="image"><img src="./images/zudio img 1.jpg" alt="">
+    <div class="box"><div class="giftcard">
+        <h5 class="text">zudio</h5>
+    </div>
+    <h5 id="gc">Zudio E-Gift Card</h5></div>
+    </div>
+    <p style="width: 70%; color: gray;">Runnin' out of gift ideas? We've got something that's really IN: Zudio E-Gift Cards! Give your loved ones the gift of fashion and fits that are IN. Deliver WHAT’S IN straight to their in-box! WHAT’S IN IS IN GIFTIN! WHAT’S IN IS IN ZUDIO!</p>
+    <h2 style="width: 70%; color: rgb(92, 91, 91);">Enter Denomination</h3>
+    <div id="input">
+        <input type="number" placeholder=" Enter amount*">
+        <input type="number" placeholder="Enter quantity*">
+    </div>
+    <div class="pricelimit">
+    <p>Min:₹250.00, Max:₹49,000.00</p>
+    <p>Min: 1,Max: 10</p>
+    </div>
+    
+    <!-- Controls row: Delivery options | Date | Mode -->
+    <div class="controls-row" aria-label="delivery controls">
+      <!-- Delivery Options -->
+      <div class="control-col" role="group" aria-labelledby="deliveryOptTitle">
+        <div class="section-title-withline"><h2 id="deliveryOptTitle">Delivery Options</h2></div>
+        <div class="option-list" role="radiogroup" aria-label="Delivery Options">
+          <label class="option">
+            <input type="radio" name="deliveryOption" value="gift" checked>
+            <div class="pill"><span class="dot" aria-hidden="true"></span><span class="label-text">Send As Gift</span></div>
+          </label>
+
+          <label class="option">
+            <input type="radio" name="deliveryOption" value="self">
+            <div class="pill"><span class="dot" aria-hidden="true"></span><span class="label-text">Buy For Self</span></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pick a Delivery Date -->
+      <div class="control-col" role="group" aria-labelledby="dateOptTitle">
+        <div class="section-title-withline"><h2 id="dateOptTitle">Pick a Delivery Date</h2></div>
+        <div class="option-list" role="radiogroup" aria-label="Delivery Date">
+          <label class="option">
+            <input type="radio" name="dateOption" value="today" checked>
+            <div class="pill"><span class="dot" aria-hidden="true"></span><span class="label-text">Today</span></div>
+          </label>
+
+          <label class="option">
+            <input type="radio" name="dateOption" value="later">
+            <div class="pill"><span class="dot" aria-hidden="true"></span><span class="label-text">Send Later</span></div>
+          </label>
+        </div>
+
+        <!-- date picker shown only when 'later' selected -->
+        <div style="margin-top:10px;">
+          <input type="date" id="futureDate" style="display:none" aria-label="Select future delivery date">
+        </div>
+      </div>
+
+      <!-- Mode of Delivery -->
+      <div class="control-col" role="group" aria-labelledby="modeOptTitle">
+        <div class="section-title-withline"><h2 id="modeOptTitle">Mode of Delivery</h2></div>
+        <div class="option-list" role="radiogroup" aria-label="Mode of Delivery">
+          <label class="option">
+            <input type="radio" name="mode" value="email" checked>
+            <div class="pill"><span class="dot" aria-hidden="true"></span><span class="label-text">Email</span></div>
+          </label>
+
+          <label class="option">
+            <input type="radio" name="mode" value="sms">
+            <div class="pill"><span class="dot" aria-hidden="true"></span><span class="label-text">SMS</span></div>
+          </label>
+
+          <label class="option">
+            <input type="radio" name="mode" value="both">
+            <div class="pill"><span class="dot" aria-hidden="true"></span><span class="label-text">Both</span></div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- design theme -->
+    <div class="theme-box" aria-hidden="true">
+      <div class="section-title-withline" style="margin:18px 0;"><h2>Select EGV Design Theme</h2></div>
+      <img src="./images/zud01_thumnail.jpeg" alt="Zudio gift card design">
+    </div>
+
+    <!-- sender & receiver details -->
+    <div class="details" aria-label="sender and receiver details">
+      <div class="section-title-withline"><h2>Enter Sender Receiver Details</h2></div>
+
+      <div class="details-grid">
+        <!-- sender -->
+        <div class="field-col" id="senderCol">
+          <h3 style="margin:0 0 6px;font-size:14px;color:#444;font-weight:600">Sender's Details</h3>
+          <input type="text" id="senderFirst" placeholder="First Name*" autocomplete="given-name">
+          <input type="text" id="senderLast" placeholder="Last Name*" style="margin-top:8px" autocomplete="family-name">
+          <input type="email" id="senderEmail" placeholder="Email Address*" style="margin-top:8px" autocomplete="email">
+        </div>
+
+        <!-- receiver -->
+        <div class="field-col" id="receiverCol">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <h3 style="margin:0;font-size:14px;color:#444;font-weight:600">Receiver's Details</h3>
+
+            <!-- styled checkbox-pill for same as sender -->
+            <label class="option" style="margin:0">
+              <input type="checkbox" id="sameDetails" aria-checked="false">
+              <div class="pill checkbox-pill" title="Same as Sender's Details">
+                <span class="box" aria-hidden="true"><span class="check"></span></span>
+                <span class="label-text">Same as Sender's</span>
+              </div>
+            </label>
+          </div>
+
+          <input type="text" id="receiverFirst" placeholder="First Name*" style="margin-top:10px" autocomplete="given-name">
+          <input type="text" id="receiverLast" placeholder="Last Name*" style="margin-top:8px" autocomplete="family-name">
+          <input type="email" id="receiverEmail" placeholder="Email Address*" style="margin-top:8px" autocomplete="email">
+        </div>
+      </div>
+    </div>
+
+    <button class="submit-btn" id="submitBtn">Proceed</button>
+
+  </div>
+  <div class="container1">
+    <button class="preview-btn">PREVIEW E-GIFT-CARD</button>
+
+    <div class="section-title">
+      <span>Select Payment Method</span>
+      <span class="amount">Payable Amount: ₹0.00</span>
+    </div>
+
+    <div class="agreement">
+      <label class="checkbox-label">
+        <input type="checkbox" id="termsCheckbox">
+        I agree to the <a href="#">Terms and Conditions</a>
+      </label>
+    </div>
+
+    <button class="pay-btn" id="payBtn" disabled>PAY NOW</button>
+
+    <p class="notice">
+      This site is protected by reCAPTCHA and the Google 
+      <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
+    </p>
+
+    <hr class="divider">
+
+    <div class="terms-section">
+      <h4>Terms & Conditions</h4>
+      <ul>
+        <li>E-Gift Voucher is valid for 12 months from the date of purchase/activation.</li>
+        <li>Protect the E-Gift Voucher number and PIN.</li>
+        <li>E-Gift Voucher is a combination of a 16-digit Card number and a 6-digit PIN.</li>
+        <li>Received by customers through e-mail or SMS.</li>
+        <li>ONE-TIME Redeem only — cannot be partially redeemed.</li>
+        <li>Can be redeemed only at Zudio Standalone Stores.</li>
+        <li>Cannot be used online.</li>
+        <li>Non-reloadable and non-refundable once issued.</li>
+        <li>Property of Trent Limited.</li>
+        <li>Check balance at the store or the Zudio website.</li>
+        <li>To check balance customer can visit the store and ask the store staff for the same or visit our website www.zudio.wohoo.in</li>
+        <li>Multiple e-Gift Voucher can be clubbed in single transaction</li>
+        <li>E-Gift Voucher cannot be extended & cannot issue new E-Gift Voucher post expiry</li>
+        <li>E-Gift Voucher can be used during sale period & E-Gift Voucher can be used with existing offers in store</li>
+      </ul>
+    </div>
+
+</div>
+    
+    <!-- footer -->
+        <div class="footer">
+            <p>© Copyright 2025 Pine Labs Limited. All rights reserved</p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,992 @@
+/* ===== Body ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: white;
+  overflow-x: hidden; /* ✅ only hide horizontal scroll */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    top: 0px;
+    width: 100%;
+    font-size: 10px;
+    gap: 30px;
+}
+.navbar a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 17px;
+}
+.navbar .logo{
+    font-size: 5.5rem;
+    margin-top: 10px;
+    font-weight: 500;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+#gap1{
+    color: red;
+    margin-left: 350px;
+}
+.image{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(214, 214, 214);
+}
+.image img{
+    height: 78%;
+    width: 98%;
+    border-radius: 10px
+}
+.giftcard{
+    height: 45px;
+    width: 45px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    margin-top: 5px;
+}
+.giftcard h5{
+    color: white;
+}
+#gc{
+    margin-top: 10px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90px;
+    width: 140px;
+    background-color: aliceblue;
+}
+/* input box */
+input{
+    height: 30px;
+    width: 350px;
+}
+#input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    gap: 100px;
+}
+.pricelimit{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 550px;
+    align-items: baseline;
+    font-size: small;
+    color: rgb(90, 90, 90);
+}
+:root{
+      --bg:#f6f6f8;
+      --card:#fff;
+      --muted:#777;
+      --accent:#e9eef7;
+      --primary:#000; /* main button color */
+      --accent-2:#8a2be2; /* accent for selected */
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .container{
+      width:90%;
+      max-width:980px;
+      margin:28px auto;
+      background:var(--card);
+      border-radius:10px;
+      padding:28px;
+      box-shadow:0 6px 20px rgba(10,10,20,0.06);
+    }
+
+    h1{margin:0 0 18px;text-align:center;font-weight:600}
+    h2{
+      margin:0 0 12px;
+      font-size:16px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    /* --- Controls row: three columns --- */
+    .controls-row{
+      display:flex;
+      gap:28px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .control-col{
+      flex:1;
+      min-width:220px; /* so it stacks responsively on very small screens */
+      background:transparent;
+    }
+
+    /* --- pill option styles --- */
+    .option-list{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    /* Each option is a label that contains input (hidden) + .pill */
+    .option{
+      display:inline-flex;
+      align-items:center;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    .option input{
+      position:absolute;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .pill{
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid #d6d6d8;
+      background:linear-gradient(180deg,#fff,#fbfbfb);
+      font-size:15px;
+      min-width:88px;
+      text-align:center;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+      transition:all .16s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    /* show a small dot for radio pills */
+    .pill .dot{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      border:2px solid #bbb;
+      display:inline-block;
+      flex:0 0 12px;
+      background:transparent;
+    }
+
+    /* when checked - target input:checked + .pill */
+    .option input:checked + .pill{
+      border-color:var(--accent-2);
+      box-shadow: 0 6px 18px rgba(138,43,226,0.08);
+      transform:translateY(-1px);
+    }
+
+    .option input:checked + .pill .dot{
+      background:var(--accent-2);
+      border-color:var(--accent-2);
+    }
+
+    /* Checkbox styled inside pill */
+    .pill.checkbox-pill{
+      min-width:160px;
+      justify-content:flex-start;
+      padding-left:12px;
+    }
+    .pill.checkbox-pill .box{
+      width:16px;height:16px;border-radius:3px;border:1px solid #bfc3c8;
+      display:inline-block;margin-right:8px;flex:0 0 16px; background:#fff;
+      position:relative;
+    }
+    /* check mark hidden by default */
+    .pill.checkbox-pill .check{
+      position:absolute; left:3px; top:1px; width:8px;height:12px;
+      border:solid white; border-width:0 2px 2px 0; transform:rotate(45deg) scale(0);
+      transition:transform .12s ease;
+      box-shadow:0 1px 0 rgba(0,0,0,0.07) inset;
+    }
+    /* when checked, pill border/background changes and show check */
+    .option input[type="checkbox"]:checked + .pill.checkbox-pill{
+      border-color:var(--accent-2);
+      background:linear-gradient(180deg, #f6ecff, #f1e6ff);
+    }
+    .option input[type="checkbox"]:checked + .pill.checkbox-pill .box{
+      background:var(--accent-2);
+      border-color:var(--accent-2);
+    }
+    .option input[type="checkbox"]:checked + .pill.checkbox-pill .check{
+      transform:rotate(45deg) scale(1);
+    }
+
+    /* label text color */
+    .pill span.label-text{ color:#222; font-weight:500; font-size:14px; }
+
+    /* small helper text / borders */
+    .section-title-withline {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:8px;
+    }
+    .section-title-withline::before,
+    .section-title-withline::after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:#e6e6e6;
+    }
+    .section-title-withline h2{
+      margin:0 8px; font-size:15px; color:#666; font-weight:600;
+    }
+
+    /* theme box (card image) */
+    .theme-box{
+      text-align:center;
+      padding:20px 0;
+    }
+    .theme-box img{
+      width:120px;height:120px;object-fit:cover;border-radius:8px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.08);
+      border:3px solid #eef2ff;
+    }
+
+    /* details form */
+    .details{
+      margin-top:26px;
+    }
+    .details-grid{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .field-col{flex:1; min-width:260px}
+    input[type="text"], input[type="email"], input[type="date"]{
+      width:100%;
+      padding:10px 12px;
+      border-radius:6px;
+      border:1px solid #d8d8d8;
+      margin-top:10px;
+      font-size:14px;
+    }
+    input[type="date"]{padding:8px 10px}
+
+    .submit-btn{
+      margin-top:18px;
+      display:inline-block;
+      background:var(--primary);
+      color:white;padding:12px 18px;border-radius:8px;border:none;
+      font-weight:600;cursor:pointer;width:100%;
+    }
+
+    /* responsive tweaks */
+    @media (max-width:720px){
+      .controls-row{gap:14px}
+      .pill{padding:8px 12px; min-width:78px}
+      .pill.checkbox-pill{min-width:140px}
+    }
+
+    .container1 {
+  width: 90%;
+  max-width: 900px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.preview-btn {
+  background-color: #f04e4e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.preview-btn:hover {
+  background-color: #d53e3e;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  font-weight: 500;
+}
+
+.amount {
+  font-weight: bold;
+}
+
+.agreement {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.checkbox-label a {
+  color: #e64949;
+  text-decoration: none;
+}
+
+.pay-btn {
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: #f04e4e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.pay-btn:hover:enabled {
+  background-color: #d53e3e;
+}
+
+.pay-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.notice {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+}
+
+.notice a {
+  color: #e64949;
+  text-decoration: none;
+}
+
+.divider {
+  margin: 40px 0 30px;
+}
+
+.terms-section {
+  text-align: left;
+  font-size: 13px;
+}
+
+.terms-section h4 {
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.terms-section ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+.terms-section li {
+  margin-bottom: 8px;
+}
+.footer{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(206, 205, 205);
+    text-align: center;
+    font-size: 16px;
+}
+/* ============================================
+   COMPREHENSIVE MEDIA QUERIES
+   ============================================ */
+
+/* Large Desktops (1440px and above) */
+@media screen and (min-width: 1440px) {
+  .navbar {
+    gap: 40px;
+  }
+
+  .navbar .logo {
+    font-size: 6rem;
+  }
+
+  #gap1 {
+    margin-left: 400px;
+  }
+
+  .navbar a {
+    font-size: 18px;
+  }
+
+  #input {
+    width: 900px;
+  }
+}
+
+/* Standard Desktops (1200px to 1439px) */
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+  .navbar {
+    gap: 35px;
+  }
+
+  #gap1 {
+    margin-left: 300px;
+  }
+
+  #input {
+    width: 800px;
+  }
+}
+
+/* Medium Desktops (1024px to 1199px) */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .navbar {
+    gap: 25px;
+    padding: 0 20px;
+  }
+
+  .navbar .logo {
+    font-size: 5rem;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
+
+  #gap1 {
+    margin-left: 200px;
+  }
+
+  #input {
+    width: 700px;
+    gap: 80px;
+  }
+
+  .pricelimit {
+    gap: 400px;
+  }
+}
+
+/* Tablets Landscape (768px to 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar {
+    height: 80px;
+    gap: 18px;
+    padding: 0 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar .logo {
+    font-size: 4.5rem;
+    margin-right: 0;
+  }
+
+  .navbar a {
+    font-size: 15px;
+  }
+
+  #gap1 {
+    margin-left: 120px;
+  }
+
+  .image {
+    height: 350px;
+  }
+
+  #input {
+    width: 90%;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  #input input {
+    width: 300px;
+  }
+
+  .pricelimit {
+    width: 90%;
+    gap: 200px;
+    justify-content: space-around;
+  }
+
+  body > p {
+    width: 85% !important;
+  }
+
+  body > h2 {
+    width: 85% !important;
+    font-size: 16px;
+  }
+
+  .controls-row {
+    gap: 20px;
+  }
+
+  .container,
+  .container1 {
+    width: 92%;
+    padding: 20px;
+  }
+}
+
+/* Tablets Portrait (600px to 767px) */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  .navbar {
+    height: auto;
+    min-height: 70px;
+    gap: 12px;
+    padding: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar .logo {
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  #gap1 {
+    margin-left: 0;
+    color: red;
+  }
+
+  .image {
+    height: 300px;
+  }
+
+  .image img {
+    width: 95%;
+  }
+
+  #input {
+    width: 90%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #input input {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .pricelimit {
+    width: 90%;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  body > p {
+    width: 90% !important;
+    font-size: 14px;
+  }
+
+  body > h2 {
+    width: 90% !important;
+    font-size: 14px;
+  }
+
+  .controls-row {
+    gap: 16px;
+  }
+
+  .control-col {
+    min-width: 100%;
+  }
+
+  .pill {
+    padding: 8px 12px;
+    min-width: 78px;
+  }
+
+  .pill.checkbox-pill {
+    min-width: 140px;
+  }
+
+  .container,
+  .container1 {
+    width: 94%;
+    padding: 18px;
+  }
+
+  .section-title {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* Mobile Landscape (487px to 599px) */
+@media screen and (min-width: 487px) and (max-width: 599px) {
+  .navbar {
+    height: auto;
+    gap: 10px;
+    padding: 15px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar .logo {
+    font-size: 3.5rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .navbar a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  #gap1 {
+    margin-left: 0;
+  }
+
+  .image {
+    height: 280px;
+  }
+
+  #input {
+    width: 95%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #input input {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .pricelimit {
+    width: 95%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  body > p,
+  body > h2 {
+    width: 92% !important;
+    font-size: 13px;
+  }
+
+  .container,
+  .container1 {
+    width: 95%;
+    padding: 16px;
+  }
+}
+
+/* Mobile Portrait - Column Layout (Below 486px) */
+@media screen and (max-width: 486px) {
+  body {
+    max-width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 20px 10px;
+  }
+
+  .navbar .logo {
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    display: block;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar a:last-child {
+    border-bottom: none;
+  }
+
+  #gap1 {
+    margin-left: 0;
+    color: red;
+  }
+
+  .image {
+    height: 250px;
+  }
+
+  .image img {
+    width: 92%;
+    height: 75%;
+  }
+
+  .box {
+    width: 120px;
+    height: 80px;
+  }
+
+  .giftcard {
+    height: 40px;
+    width: 40px;
+  }
+
+  #input {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  #input input {
+    width: 100%;
+    max-width: 320px;
+    height: 35px;
+  }
+
+  .pricelimit {
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  body > p {
+    width: 92% !important;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  body > h2 {
+    width: 92% !important;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .controls-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .control-col {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .option-list {
+    justify-content: center;
+  }
+
+  .pill {
+    padding: 10px 14px;
+    min-width: 90px;
+    font-size: 14px;
+  }
+
+  .pill.checkbox-pill {
+    min-width: 160px;
+  }
+
+  .container,
+  .container1 {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .details-grid {
+    flex-direction: column;
+  }
+
+  .field-col {
+    min-width: 100%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"] {
+    font-size: 14px;
+  }
+
+  .submit-btn,
+  .preview-btn,
+  .pay-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .section-title {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .agreement {
+    text-align: center;
+  }
+
+  .checkbox-label {
+    font-size: 13px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .terms-section {
+    font-size: 12px;
+  }
+
+  .terms-section ul {
+    padding-left: 15px;
+  }
+
+  .footer {
+    font-size: 11px;
+    padding: 10px;
+    height: auto;
+  }
+}
+
+/* Extra Small Mobile (321px to 420px) */
+@media screen and (min-width: 321px) and (max-width: 420px) {
+  body {
+    max-width: 100%;
+  }
+  .navbar .logo {
+    font-size: 3.2rem;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 11px 0;
+  }
+
+  .image {
+    height: 230px;
+  }
+
+  body > p {
+    font-size: 12px;
+  }
+}
+
+/* Very Small Mobile (max 320px) */
+@media screen and (max-width: 320px) {
+  body {
+    max-width: 100%;
+  }
+  .navbar {
+    padding: 15px 5px;
+  }
+
+  .navbar .logo {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+  }
+
+  .navbar a {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+
+  .image {
+    height: 220px;
+  }
+
+  .image img {
+    width: 90%;
+  }
+
+  #input input {
+    max-width: 280px;
+    height: 32px;
+  }
+
+  body > p,
+  body > h2 {
+    width: 95% !important;
+    font-size: 11px;
+  }
+
+  .pill {
+    padding: 8px 10px;
+    min-width: 75px;
+    font-size: 12px;
+  }
+
+  .pill.checkbox-pill {
+    min-width: 140px;
+  }
+
+  .container,
+  .container1 {
+    width: 96%;
+    padding: 12px;
+  }
+
+  .section-title-withline h2 {
+    font-size: 13px;
+  }
+
+  .theme-box img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer {
+    font-size: 10px;
+  }
+}

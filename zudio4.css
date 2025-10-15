@@ -1,0 +1,419 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* ===== Body ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(0, 0, 0);
+  overflow-x: hidden; /* ✅ only hide horizontal scroll */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  height: 90px;
+  top: 0px;
+  min-width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 10px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  gap: 50px;
+
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+.navbar .logo{
+    margin-right: 450px;
+    font-size: 5.5rem;
+}
+.navbar a.active{
+    color: #a19f9f;        
+    font-weight: 700;
+    border-bottom: 2px solid #ebe7e7;
+}
+.navbar h1:hover {
+  color: rgb(128, 127, 127);
+}
+
+/* ===== Slideshow Container ===== */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+/* ===== Each Slide ===== */
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ===== Dots Container ===== */
+.dots-container {
+  position: absolute;
+  bottom: 25px;
+  right: 35px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+/* ===== Dots Style ===== */
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  #logo {
+    font-size: 50px;
+    margin-left: -200px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+.cr{
+    display: flex;
+    flex-direction: row;
+    height: 110px;
+    width: 100%;
+    margin-left: 50px;
+    color: white;
+    font-size: 20px;
+    margin-top: 130px;
+    background-color: black;
+    margin: 0;
+    padding: 0%;
+}
+.cr a{
+    color: white;
+    text-decoration: none;
+}
+.cr p{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.link{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+======================================== */
+
+
+/* Medium Desktops (992px - 1199px) */
+@media (max-width: 1199px) {
+  .navbar .logo {
+    margin-right: 200px;
+    font-size: 4.5rem;
+  }
+
+  .navbar {
+    gap: 30px;
+    font-size: 9px;
+  }
+
+  .cr {
+    font-size: 18px;
+    padding: 20px 40px;
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+  body{
+    max-width: 100%;
+  }
+  .navbar .logo {
+    margin-right: 100px;
+    font-size: 4rem;
+  }
+
+  .navbar {
+    gap: 20px;
+    font-size: 8px;
+  }
+
+  .navbar h1 {
+    font-size: 0.9rem;
+  }
+
+  .cr {
+    flex-direction: column;
+    font-size: 16px;
+    padding: 20px 30px;
+    gap: 20px;
+  }
+
+  .link {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .dots-container {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Small Tablets (600px - 767px) */
+@media (max-width: 767px) {
+  body{
+    max-width: 100%;
+  }
+  .navbar .logo {
+    margin-right: 50px;
+    font-size: 3.5rem;
+  }
+
+  .navbar {
+    gap: 15px;
+    height: auto;
+    padding: 10px 15px;
+  }
+
+  .navbar h1 {
+    font-size: 0.8rem;
+  }
+
+  .slideshow-container {
+    height: 70vh;
+  }
+
+  .cr {
+    font-size: 14px;
+    padding: 15px 20px;
+  }
+}
+
+/* Mobile Landscape (487px - 599px) */
+@media (max-width: 599px) {
+  body{
+    max-width: 100%;
+  }
+  .navbar .logo {
+    margin-right: 30px;
+    font-size: 3rem;
+  }
+
+  .navbar {
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .navbar h1 {
+    font-size: 0.7rem;
+  }
+  
+  .slideshow-container {
+    height: 60vh;
+    width: 100%;
+  }
+
+  .cr {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  .cr p {
+    font-size: 12px;
+  }
+
+  .link a {
+    font-size: 11px;
+  }
+}
+
+/* Mobile Portrait (Below 486px) - Column Layout */
+@media (max-width: 486px) {
+  body{
+    max-width: 100%;
+  }
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  .navbar .logo {
+    margin-right: 0;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  .navbar a {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .navbar h1 {
+    font-size: 1rem;
+  }
+
+  .navbar a.active {
+    border-bottom: none;
+    border-left: 3px solid #ebe7e7;
+    padding-left: 15px;
+  }
+
+  .slideshow-container {
+    height: 60vh;
+    margin-top: 0;
+  }
+
+  .dots-container {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .cr {
+    flex-direction: column;
+    font-size: 11px;
+    padding: 15px 10px;
+    gap: 15px;
+    text-align: center;
+    height: 170px;
+  }
+
+  .cr p {
+    font-size: 11px;
+    margin-left: 0;
+  }
+
+  .link {
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    gap: 8px;
+  }
+
+  .link a {
+    font-size: 10px;
+
+  }
+}
+
+/* Extra Small Mobile (Below 375px) */
+@media (max-width: 375px) {
+  body{
+    max-width: 100%;
+  }
+  .navbar .logo {
+    font-size: 3rem;
+  }
+
+  .navbar h1 {
+    font-size: 0.9rem;
+  }
+
+  .slideshow-container {
+    height: 50vh;
+  }
+
+  .cr {
+    font-size: 10px;
+  }
+
+  .cr p,
+  .link a {
+    font-size: 9px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    gap: 6px;
+  }
+}
+
+/* Very Small Mobile (Below 320px) */
+@media (max-width: 320px) {
+  body{
+    max-width: 100%;
+  }
+  .navbar .logo {
+    font-size: 2.5rem;
+  }
+
+  .navbar h1 {
+    font-size: 0.8rem;
+  }
+
+  .navbar {
+    gap: 10px;
+    padding: 10px 5px;
+  }
+
+  .slideshow-container {
+    height: 45vh;
+  }
+
+  .cr {
+    font-size: 9px;
+    padding: 10px 8px;
+  }
+}

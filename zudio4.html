@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothing Brand Slideshow</title>
+  <link rel="stylesheet" href="zudio4.css">
+  
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" class="logo"><p>zudio</p></a>
+        <a href="zudio1.html" ><h1>Zudio Near You</h1></a>
+        <a href="zudio2.html"><h1>Z World</h1></a>
+        <a href="zudio4.html" class="active"><h1>Z Stories</h1></a>
+        <a href="zudio3.html" ><h1>Gift Card</h1></a>
+    </div>
+  <div class="slideshow-container">
+    <img src="./images/pexels-cottonbro-10131809.jpg" class="slide active" alt="Fashion Collection 1">
+    <img src="./images/pexels-emrecanalgul-26125905.jpg" class="slide" alt="Fashion Collection 2">
+    <img src="images/pexels-trinitykubassek-246368.jpg" class="slide" alt="Fashion Collection 3">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1600&q=80" class="slide" alt="Fashion Collection 4">
+    <img src="./images/pexels-kelvincarris-12916562.jpg" class="slide" alt="Fashion Collection 5">
+    <img src="./images/pexels-tolgraw-photography-445047051-23878717.jpg" class="slide" alt="Fashion Collection 6">
+    <!-- Dots -->
+    <div class="dots-container">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+  <div class="cr">
+        <p>
+            Copyright © 2025 Zudio Don't miss out on the latest <br>in fashion.Follow us on instagram <a href="">@MYZUDIO</a>,on facebook <a href="">@MYZUDIO</a> </p>
+        <div class="link"><a href="">Cookie Policy</a>
+        <a href="">Contact us-Zudiohelp@trent-tata.com</a>
+        <a href="">Zudio Retail Business Associate Enquiry-zudio.rba@trent-tata.com</a></div>
+    </div>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle("active", idx === i);
+        dots[idx].classList.toggle("active", idx === i);
+      });
+      index = i;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    // Auto-slide every 2 seconds
+    setInterval(nextSlide, 2000);
+
+    // Allow manual control via dots
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => showSlide(i));
+    });
+  </script>
+
+</body>
+</html>
