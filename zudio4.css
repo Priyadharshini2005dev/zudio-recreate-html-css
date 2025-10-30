@@ -1,51 +1,56 @@
+/* ===== Global ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-/* ===== Body ===== */
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  top: 0;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: rgb(0, 0, 0);
-  overflow-x: hidden; /* ✅ only hide horizontal scroll */
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  overflow-x: hidden;
 }
+
 /* ===== Navbar ===== */
 .navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
   height: 90px;
-  top: 0px;
-  min-width: 100%;
+  width: 100%;
   background-color: black;
   color: white;
   font-size: 10px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   gap: 50px;
+  padding: 0;
+  margin: 0;
+}
 
+.navbar a, .navbar h1 {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  transition: color 0.3s;
 }
-.navbar a{
-    text-decoration: none;
-    color: white;
-    padding: 10px;
+
+.navbar a.active {
+  color: #a19f9f;
+  font-weight: 700;
+  border-bottom: 2px solid #ebe7e7;
 }
-.navbar .logo{
-    margin-right: 450px;
-    font-size: 5.5rem;
+
+.navbar .logo {
+  margin-right: 400px;
+  font-size: 5.5rem;
 }
-.navbar a.active{
-    color: #a19f9f;        
-    font-weight: 700;
-    border-bottom: 2px solid #ebe7e7;
-}
+
 .navbar h1:hover {
   color: rgb(128, 127, 127);
 }
@@ -54,7 +59,7 @@ body {
 .slideshow-container {
   position: relative;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -64,7 +69,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   transition: opacity 0.8s ease-in-out;
 }
 
@@ -100,55 +105,56 @@ body {
   transform: scale(1.2);
 }
 
-@media (max-width: 768px) {
-  .dot {
-    width: 12px;
-    height: 12px;
+/* ===== Footer ===== */
+.cr {
+  display: flex;
+  flex-direction: row;
+  height: 110px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  background-color: black;
+  margin: 0;
+  padding: 20px 0;
+  margin-top: 130px;
+}
+
+.cr a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.cr p {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+/* ===== Links ===== */
+.link {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+/* MEDIA QUERIES */
+/* Large Desktops (1440px and above) */
+@media (min-width: 1440px) {
+  .navbar .logo {
+    margin-left: -500px;
+    font-size: 90px;
   }
+}
 
-  #logo {
-    font-size: 50px;
-    margin-left: -200px;
-  }
-
-  .navbar {
-    flex-wrap: wrap;
-    gap: 20px;
+/* Standard Desktops (1200px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1200px) {
+  .navbar .logo {
+    margin-left: -280px;
+    font-size: 70px;
   }
 }
-
-.cr{
-    display: flex;
-    flex-direction: row;
-    height: 110px;
-    width: 100%;
-    margin-left: 50px;
-    color: white;
-    font-size: 20px;
-    margin-top: 130px;
-    background-color: black;
-    margin: 0;
-    padding: 0%;
-}
-.cr a{
-    color: white;
-    text-decoration: none;
-}
-.cr p{
-    margin-top: 20px;
-    margin-left: 50px;
-}
-.link{
-    width: 800px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 200px;
-    margin-top: 20px;
-}
-/* ========================================
-   MEDIA QUERIES - RESPONSIVE DESIGN
-======================================== */
-
 
 /* Medium Desktops (992px - 1199px) */
 @media (max-width: 1199px) {
@@ -170,21 +176,30 @@ body {
 
 /* Tablets (768px - 991px) */
 @media (max-width: 991px) {
-  body{
-    max-width: 100%;
-  }
-  .navbar .logo {
-    margin-right: 100px;
-    font-size: 4rem;
+  body {
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .navbar {
+    height: 80px;
     gap: 20px;
     font-size: 8px;
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+
+  .navbar .logo {
+    margin-right: 0;
+    font-size: 60px;
   }
 
   .navbar h1 {
     font-size: 0.9rem;
+  }
+
+  .slideshow-container {
+    height: 70vh;
   }
 
   .cr {
@@ -192,6 +207,12 @@ body {
     font-size: 16px;
     padding: 20px 30px;
     gap: 20px;
+    height: auto;
+  }
+
+  .cr p {
+    margin-left: 0;
+    margin-top: 0;
   }
 
   .link {
@@ -212,22 +233,30 @@ body {
 
 /* Small Tablets (600px - 767px) */
 @media (max-width: 767px) {
-  body{
-    max-width: 100%;
-  }
-  .navbar .logo {
-    margin-right: 50px;
-    font-size: 3.5rem;
+  body {
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .navbar {
+    height: 70px;
     gap: 15px;
-    height: auto;
-    padding: 10px 15px;
+    padding: 0 15px;
+    flex-wrap: wrap;
+  }
+
+  .navbar .logo {
+    margin-right: 0;
+    font-size: 50px;
+    height: 150px;
+  }
+  .navbar p{
+    margin-top: 30px;
   }
 
   .navbar h1 {
     font-size: 0.8rem;
+    margin-top: 0;
   }
 
   .slideshow-container {
@@ -237,52 +266,21 @@ body {
   .cr {
     font-size: 14px;
     padding: 15px 20px;
-  }
-}
-
-/* Mobile Landscape (487px - 599px) */
-@media (max-width: 599px) {
-  body{
-    max-width: 100%;
-  }
-  .navbar .logo {
-    margin-right: 30px;
-    font-size: 3rem;
-  }
-
-  .navbar {
-    gap: 10px;
-    justify-content: space-between;
-  }
-
-  .navbar h1 {
-    font-size: 0.7rem;
-  }
-  
-  .slideshow-container {
-    height: 60vh;
-    width: 100%;
-  }
-
-  .cr {
-    font-size: 12px;
-    padding: 15px;
+    height: auto;
   }
 
   .cr p {
-    font-size: 12px;
-  }
-
-  .link a {
-    font-size: 11px;
+    margin-left: 0;
   }
 }
 
-/* Mobile Portrait (Below 486px) - Column Layout */
-@media (max-width: 486px) {
-  body{
-    max-width: 100%;
+/* Mobile Landscape (480px - 599px) */
+@media (max-width: 599px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
   }
+
   .navbar {
     flex-direction: column;
     height: auto;
@@ -295,17 +293,19 @@ body {
   .navbar .logo {
     margin-right: 0;
     font-size: 3.5rem;
-    margin-bottom: 20px;
-    padding: 20px;
+    margin-bottom: 10px;
   }
+
   .navbar a {
     width: 100%;
     text-align: center;
     padding: 8px 0;
+    display: block;
   }
 
   .navbar h1 {
     font-size: 1rem;
+    margin: 0;
   }
 
   .navbar a.active {
@@ -316,7 +316,92 @@ body {
 
   .slideshow-container {
     height: 60vh;
+    width: 100%;
+  }
+
+  .dots-container {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .cr {
+    flex-direction: column;
+    font-size: 12px;
+    padding: 15px 10px;
+    gap: 15px;
+    text-align: center;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .cr p {
+    font-size: 12px;
+    margin-left: 0;
     margin-top: 0;
+  }
+
+  .link {
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    gap: 8px;
+    font-size: 11px;
+    padding: 0 15px;
+  }
+
+  .link a {
+    font-size: 11px;
+  }
+}
+
+/* Mobile Portrait (Below 479px) */
+@media (max-width: 479px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  .navbar .logo {
+    margin-right: 0;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    display: block;
+  }
+
+  .navbar h1 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .navbar a.active {
+    border-bottom: none;
+    border-left: 3px solid #ebe7e7;
+    padding-left: 15px;
+  }
+
+  .slideshow-container {
+    height: 60vh;
   }
 
   .dots-container {
@@ -336,12 +421,14 @@ body {
     padding: 15px 10px;
     gap: 15px;
     text-align: center;
-    height: 170px;
+    height: auto;
+    margin-top: 30px;
   }
 
   .cr p {
     font-size: 11px;
     margin-left: 0;
+    margin-top: 0;
   }
 
   .link {
@@ -349,19 +436,17 @@ body {
     width: 100%;
     margin-left: 0;
     gap: 8px;
+    font-size: 10px;
+    padding: 0 10px;
   }
 
   .link a {
     font-size: 10px;
-
   }
 }
 
 /* Extra Small Mobile (Below 375px) */
 @media (max-width: 375px) {
-  body{
-    max-width: 100%;
-  }
   .navbar .logo {
     font-size: 3rem;
   }
@@ -378,23 +463,18 @@ body {
     font-size: 10px;
   }
 
-  .cr p,
-  .link a {
+  .cr p, .link a {
     font-size: 9px;
   }
 
   .dot {
     width: 8px;
     height: 8px;
-    gap: 6px;
   }
 }
 
 /* Very Small Mobile (Below 320px) */
 @media (max-width: 320px) {
-  body{
-    max-width: 100%;
-  }
   .navbar .logo {
     font-size: 2.5rem;
   }

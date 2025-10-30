@@ -89,3 +89,14 @@ const payBtn = document.getElementById("payBtn");
 checkbox.addEventListener("change", () => {
   payBtn.disabled = !checkbox.checked;
 });
+  const laterRadio = document.querySelector('input[value="later"]');
+  const todayRadio = document.querySelector('input[value="today"]');
+  const futureDate = document.getElementById('futureDate');
+
+  function toggleDatePicker() {
+    futureDate.style.display = laterRadio.checked ? 'block' : 'none';
+  }
+
+  laterRadio.addEventListener('change', toggleDatePicker);
+  todayRadio.addEventListener('change', toggleDatePicker);
+
